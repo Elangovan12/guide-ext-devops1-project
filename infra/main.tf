@@ -17,9 +17,7 @@ resource "aws_security_group" "ec2_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  depends_on = [aws_ami.my-ami]
-
   tags = {
-    "Name" = "ec2-raspi-sg"
+    "Name" = "ec2-jenkins-instance-sg"
   }
 }
