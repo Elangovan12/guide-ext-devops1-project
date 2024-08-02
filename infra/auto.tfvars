@@ -1,5 +1,5 @@
 aws_region      = "ap-south-1"
 ec2_server_name = "ec2-jenkins"
-ami_id          = "ami-0ad21ae1d0696ad58"
+ami_id          = "ami-055f8a5c7d69cd14d"
 instance_type   = "t3.medium"
 key_name        = "jenkins-instance-key"
