@@ -15,3 +15,15 @@ variable "ami_id" {
   description = "Backup AMI"
   type        = string
 }
+
+# Keypair
+variable "key_name" {
+  description = "Keypair for SSH into Machine"
+  type        = string
+}
+
+# Instance Type
+variable "instance_type" {
+  description = "Ec2 Instance Type"
+  type        = string
+}
