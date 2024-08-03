@@ -14,10 +14,10 @@ resource "aws_vpc_security_group_ingress_rule" "inb_allow_workpc_ipv4" {
   ip_protocol       = "tcp"
   from_port         = 0
   to_port           = 65535
-  cidr_ipv4         = "165.1.180.249/32"
+  cidr_ipv4         = var.workpc_ip
 }
 
-resource "aws_vpc_security_group_ingress_rule" "outb_allow_internet" {
+resource "aws_vpc_security_group_egress_rule" "outb_allow_internet" {
   security_group_id = aws_security_group.ec2_sg.id
   ip_protocol       = "tcp"
   from_port         = 0

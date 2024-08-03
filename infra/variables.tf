@@ -4,6 +4,12 @@ variable "aws_region" {
   type        = string
 }
 
+# MyWorkPC IP
+variable "workpc_ip" {
+  description = "MyWorkPC IP"
+  type        = string
+}
+
 # Ec2 Server name
 variable "ec2_server_name" {
   description = "Ec2 for General Usage for Cloud Development"
