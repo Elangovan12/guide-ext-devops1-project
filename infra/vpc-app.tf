@@ -2,7 +2,7 @@
 data "aws_availability_zones" "available" {}
 
 locals {
-  name   = "ex-${basename(path.cwd)}"
+  name   = "pipelineinfra-${basename(path.cwd)}"
   region = var.aws_region
 
   vpc_cidr = "10.200.0.0/16"
@@ -16,10 +16,10 @@ locals {
 }
 
 ################################################################################
-# VPC Module
+# Application VPC Module
 ################################################################################
 
-module "vpc" {
+module "application_vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.12.0"
 
@@ -50,7 +50,7 @@ module "vpc" {
   dhcp_options_domain_name_servers = ["10.200.100.1", "10.200.100.2"]
 
   # VPC Flow Logs (Cloudwatch log group and IAM role will be created)
-  vpc_flow_log_iam_role_name            = "vpc-complete-example-role"
+  vpc_flow_log_iam_role_name            = "vpc-flow-log-iam-role"
   vpc_flow_log_iam_role_use_name_prefix = false
   enable_flow_log                       = true
   create_flow_log_cloudwatch_log_group  = true

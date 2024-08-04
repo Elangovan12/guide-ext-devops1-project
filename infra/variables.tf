@@ -10,14 +10,17 @@ variable "workpc_ip" {
   type        = string
 }
 
-# Ec2 Server name
-variable "ec2_server_name" {
+################################################################################
+# Jenkins Application
+################################################################################
+# Jenkins Ec2 Server name
+variable "server_name_jenkins" {
   description = "Ec2 for General Usage for Cloud Development"
   type        = string
 }
 
 # AMI ID - Other than Initial Provisioning it will be always from recent Backup AMI
-variable "ami_id" {
+variable "ami_id_jenkins" {
   description = "Backup AMI"
   type        = string
 }
@@ -29,7 +32,28 @@ variable "key_name" {
 }
 
 # Instance Type
-variable "instance_type" {
+variable "instance_type_jenkins" {
+  description = "Ec2 Instance Type"
+  type        = string
+}
+
+################################################################################
+# Tomcat Application
+################################################################################
+# Tomcat Ec2 Server name
+variable "server_name_tomcat" {
+  description = "Ec2 for General Usage for Cloud Development"
+  type        = string
+}
+
+# AMI ID - Other than Initial Provisioning it will be always from recent Backup AMI
+variable "ami_id_tomcat" {
+  description = "Backup AMI"
+  type        = string
+}
+
+# Instance Type
+variable "instance_type_tomcat" {
   description = "Ec2 Instance Type"
   type        = string
 }
